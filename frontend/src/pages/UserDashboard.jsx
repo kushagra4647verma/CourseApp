@@ -15,7 +15,7 @@ export function Userdashboard() {
   useEffect(() => {
     async function getCourses() {
       try {
-        const res = await API.get("http://localhost:5001/api/courses");
+        const res = await API.get("/courses");
         setCourses(res.data.data);
       } catch (err) {
         console.error("Failed to fetch courses:", err);
@@ -34,7 +34,7 @@ function Courses({ courses }) {
   const [message, setmessage] = useState(null);
   async function purchaseCourse(id) {
     try {
-      const res = await API.post(`http://localhost:5001/api/users/${id}/buy`);
+      const res = await API.post(`/users/${id}/buy`);
       setmessage(res.data.message);
       alert(res.data.message);
     } catch (err) {

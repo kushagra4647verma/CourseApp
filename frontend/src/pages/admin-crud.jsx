@@ -69,7 +69,7 @@ function Createcom() {
   async function handleCreation(e) {
     e.preventDefault();
     try {
-      const res = await API.post("http://localhost:5001/api/courses/", {
+      const res = await API.post("/courses", {
         title,
         description: desc,
         price,
@@ -124,7 +124,7 @@ function Updatecom() {
   async function handleUpdation(e) {
     e.preventDefault();
     try {
-      const res = await API.put(`http://localhost:5001/api/courses/${id}`, {
+      const res = await API.put(`/courses/${id}`, {
         title,
         description: desc,
         price,
@@ -184,7 +184,7 @@ function Deletecom() {
   async function handleDeletion(e) {
     e.preventDefault();
     try {
-      const res = await API.delete(`http://localhost:5001/api/courses/${id}`);
+      const res = await API.delete(`/courses/${id}`);
       alert(res.data.message);
     } catch (err) {
       alert(err.response.data.message);

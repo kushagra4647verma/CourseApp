@@ -14,7 +14,7 @@ export function Mycourses() {
   useEffect(() => {
     async function getCourses() {
       try {
-        const res = await API.get("http://localhost:5001/api/users/my-courses");
+        const res = await API.get("/users/my-courses");
         setCourses(res.data.data);
       } catch (err) {
         console.error("Failed to fetch courses:", err);
