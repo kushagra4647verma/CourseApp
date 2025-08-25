@@ -2,7 +2,9 @@ import axios from "axios";
 
 const API = axios.create({
   baseURL:
-    process.env.NODE_ENV === "production" ? "sas" : "http://localhost:5001/api",
+    process.env.NODE_ENV === "production"
+      ? "https://courseapp-scfo.onrender.com/api"
+      : "http://localhost:5001/api",
 });
 
 API.interceptors.request.use((req) => {
