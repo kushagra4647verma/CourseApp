@@ -47,8 +47,8 @@ function Courses({ courses }) {
       <Carousel>
         <CarouselContent>
           {courses.map((course) => (
-            <CarouselItem key={course._id} className="flex justify-center">
-              <Card className="p-6 rounded-2xl shadow-md max-w-md">
+            <CarouselItem key={course._id} className="basis-full">
+              <Card className="p-8 rounded-2xl shadow-md w-full">
                 <CardContent>
                   <h2 className="text-4xl font-bold mb-4">{course.title}</h2>
 
