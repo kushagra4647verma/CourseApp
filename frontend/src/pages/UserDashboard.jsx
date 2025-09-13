@@ -43,22 +43,19 @@ function Courses({ courses }) {
     }
   }
   return (
-    <div className="w-full max-w-4xl mx-auto flex justify-center items-center min-h-screen">
+    <div className="w-full mx-auto px-4 min-h-screen flex justify-center items-center">
       <Carousel>
         <CarouselContent>
           {courses.map((course) => (
-            <CarouselItem key={course._id} className="basis-full">
-              <Card className="p-8 rounded-2xl shadow-md w-full">
+            <CarouselItem key={course._id}>
+              <Card className="p-8 rounded-2xl shadow-md w-full max-w-md mx-auto">
                 <CardContent>
                   <h2 className="text-4xl font-bold mb-4">{course.title}</h2>
-
                   <p className="text-lg text-gray-500 text-justify mb-6">
                     {course.description}
                   </p>
-
                   <div className="flex items-center justify-between gap-4">
                     <h3 className="text-2xl font-semibold">₹{course.price}</h3>
-
                     <Button
                       onClick={() => purchaseCourse(course._id)}
                       className="ml-auto"
